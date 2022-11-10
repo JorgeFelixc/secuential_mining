@@ -9,7 +9,7 @@ def index():
   sequences = getSequences('test/paths_finished.tsv')
   wikiseed = getListFormated(sequences=sequences)
 
-  data = prefixSpan(wikiseed, 250)
+  data = prefixSpan(wikiseed, 450)
   response = jsonify({ 'data': data }) 
   response.headers.add('Access-Control-Allow-Origin', '*')
   return response
