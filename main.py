@@ -9,7 +9,9 @@ def index():
   sequences = getSequences('test/paths_finished.tsv')
   wikiseed = getListFormated(sequences=sequences)
 
-  data = prefixSpan(wikiseed, 450)
+  print(request.args.get('threshold'))
+  treshold = request.args.get('threshold') if request.args.get('threshold') else 450 
+  data = prefixSpan(wikiseed, int(treshold))
   response = jsonify({ 'data': data }) 
   response.headers.add('Access-Control-Allow-Origin', '*')
   return response
