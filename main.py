@@ -16,6 +16,9 @@ def index():
   
 
 
+if __name__ == "__main__":
+  app.run()
+
 
 # def initialize (): 
 #   print('This is a Formating...')
